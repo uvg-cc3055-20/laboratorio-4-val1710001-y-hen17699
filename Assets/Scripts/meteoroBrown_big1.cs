@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class meteoroBrown_big1 : MonoBehaviour {
+public class MeteoroBrown_big1 : MonoBehaviour
+{
+
     private float scrollingSpeed = 5f;
 
     void Start()
@@ -13,7 +15,7 @@ public class meteoroBrown_big1 : MonoBehaviour {
     void Update()
     {
         transform.Translate(Vector2.down * scrollingSpeed * Time.deltaTime);
-        if (transform.position.y < -10)
+        if (transform.position.y < -6)
         {
             Destroy(gameObject);
         }
