@@ -16,7 +16,7 @@ public class ScrollingBackground : MonoBehaviour {
 
         if (transform.position.y <= -8.08) 
         {
-            transform.position = new Vector3(0f, transform.position.x, transform.position.z);
+            transform.position = new Vector3(0.289f, transform.position.x, transform.position.z);
 
         }
 
