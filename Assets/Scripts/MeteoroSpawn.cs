@@ -11,9 +11,9 @@ public class MeteoroSpawn : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        float random = Random.Range(-2f, 2f);
+        float random = Random.Range(-6.68f, 7.18f);
 
-        Instantiate(meteoroBrown_big1, new Vector3(8, random, 0), Quaternion.identity);
+        Instantiate(meteoroBrown_big1, new Vector3(random, 10, 0), Quaternion.identity);
 
     }
     // Update is called once per frame
@@ -30,9 +30,9 @@ public class MeteoroSpawn : MonoBehaviour {
         else
         {
 
-            float random = Random.Range(-2f, 2f);
+            float random = Random.Range(-6.68f, 7.18f);
 
-            Instantiate(meteoroBrown_big1, new Vector3(8, random, 0), Quaternion.identity);
+            Instantiate(meteoroBrown_big1, new Vector3(random, 20, 0), Quaternion.identity);
             elapsedTime = 0;
 
         }
