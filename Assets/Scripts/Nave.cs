@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Nave : MonoBehaviour {
 
     Rigidbody2D rb;
-    private float speed = 5f;
-
+    private float speed = 8f;
+	public Text score;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,18 @@ public class Nave : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float movX = Input.acceleration.x; rb.transform.Translate(Vector2.right * speed * movX * Time.deltaTime);
-
+		if (GameController.instance.gameOver == false) {
+			float movX = Input.acceleration.x;
+			rb.transform.Translate (Vector2.right * speed * movX * Time.deltaTime);
+			GameController.instance.score = Time.time;
+			score.text = GameController.instance.score.ToString ();
+		}
     }
+
+	public void OnTriggerEnter2D(Collider2D collision){
+		GameController.instance.gameOver = true;
+		if (GameController.instance.score > PlayerPrefs.GetFloat ("HighScore", 0)) {
+			PlayerPrefs.SetFloat ("HighScore", GameController.instance.score); 
+		}
+	}
 }
