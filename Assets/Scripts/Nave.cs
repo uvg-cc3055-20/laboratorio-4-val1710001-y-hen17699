@@ -20,7 +20,7 @@ public class Nave : MonoBehaviour {
 		if (GameController.instance.gameOver == false) {
 			float movX = Input.acceleration.x;
 			rb.transform.Translate (Vector2.right * speed * movX * Time.deltaTime);
-			GameController.instance.score = Time.time;
+			GameController.instance.score = GameController.instance.score + 1 * Time.deltaTime;
 			score.text = GameController.instance.score.ToString ();
 		}
     }
